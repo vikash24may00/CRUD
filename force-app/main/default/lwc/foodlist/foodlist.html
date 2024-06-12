@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-21-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+    <lightning-card title="Food List">
+        <div class="slds-grid slds-wrap">
+            <template for:each={foodItems} for:item="item">
+                <div key={item.Id} class="slds-col slds-size_1-of-3 slds-p-around_small">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-m-bottom_small">
+                            <img src={item.Image__c} alt={item.Name} class="food-image"/>
+                        </div>
+                        <h3 class="slds-text-heading_small">{item.Name}</h3>
+                        <p>{item.Description__c}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+</template>

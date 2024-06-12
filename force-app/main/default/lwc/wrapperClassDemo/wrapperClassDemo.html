@@ -1,0 +1,39 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-06-2024
+  @last modified by  : VIKASH MUNDARI
+-->
+
+<!-- <template>
+    <lightning-card title="Account and Contacts">
+        <template if:true={accountContacts}>
+            <lightning-datatable
+                key-field="id"
+                data={accountContacts}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template> -->
+
+
+<template>
+    <template if:true={error}>
+        <div class="slds-text-color_error" role="alert">
+            {error}
+        </div>
+    </template>
+    <template if:true={accountContactData}>
+        <lightning-datatable
+            key-field="id"
+            data={accountContactData}
+            columns={columns}
+            hide-checkbox-column>
+        </lightning-datatable>
+    </template>
+</template>

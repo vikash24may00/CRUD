@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="getPicklistValuesByRecordType Adapter">
+        data will come here
+
+        <template if:true={ratingOptions}>
+            <lightning-combobox name="rating" label="Rating" value={selectedRating} placeholder="select rating"
+                options={ratingOptions} onchange={handlechange}>
+            </lightning-combobox>
+            <p>selectedRating:{selectedRating}</p>
+        </template>
+
+
+
+        <template if:true={industryOptions}>
+            <lightning-combobox name="industry" label="Industry" value={selectedIndustry} placeholder="select industry"
+                options={industryOptions} onchange={handlechange}>
+            </lightning-combobox>
+            <p>selectedIndustry:{selectedIndustry}</p>
+        </template>
+
+    </lightning-card>
+</template>

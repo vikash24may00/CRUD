@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-22-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<!-- <template>
+    <lightning-card title="Filters" icon-name="standard:calibration">
+        <div class="slds-m-horizontal_medium">
+
+            <lightning-input label="search key" type="search" value={filters.searchKey}
+                onchange={handleSearchKeyChange}></lightning-input>
+                
+        </div>
+    </lightning-card>
+</template> -->
+
+
+ <!-- <template>
+    <lightning-input type="text" label="Search" value={searchTerm} onchange={handleChange}></lightning-input>
+    <lightning-button label="Search" onclick={search}></lightning-button>
+</template>  -->
+
+
+ <template>
+    <lightning-card title="Filters" icon-name="standard:calibration">
+        <div class="slds-m-horizontal_medium">
+
+            <lightning-input label="Search" type="text" value={searchTerm}
+                onchange={handleChange}></lightning-input>
+                <br>
+                <lightning-button label="Search" onclick={search}></lightning-button>
+
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : VIKASH MUNDARI
+  @group             : 
+  @last modified on  : 06-06-2024
+  @last modified by  : VIKASH MUNDARI
+-->
+
+<template>
+    <template if:true={error}>
+        <div class="slds-text-color_error" role="alert">
+            {error}
+        </div>
+    </template>
+    <template if:true={parentChildPetData}>
+        <lightning-datatable
+            key-field="id"
+            data={parentChildPetData}
+            columns={columns}
+            hide-checkbox-column>
+        </lightning-datatable>
+    </template>
+</template>

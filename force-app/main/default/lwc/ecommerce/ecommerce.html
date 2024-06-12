@@ -1,0 +1,54 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-28-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="E-Commerce Application" class="slds-p-around_medium">
+        <!-- Product List -->
+        <template if:true={showProductList}>
+            <lightning-datatable
+                key-field="id"
+                data={products}
+                columns={columns}
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+
+        <!-- Product Detail -->
+        <template if:true={showProductDetail}>
+            <lightning-card title={selectedProduct.Name}>
+                <div class="slds-p-around_medium">
+                    <p>Price: {selectedProduct.Price__c}</p>
+                    <lightning-button label="Add to Cart" onclick={addToCart}></lightning-button>
+                    <lightning-button label="Back to List" onclick={backToList}></lightning-button>
+                </div>
+            </lightning-card>
+        </template>
+
+        <!-- Shopping Cart -->
+        <template if:true={showCart}>
+            <lightning-card title="Shopping Cart">
+                <template if:true={cartItems.length}>
+                    <template for:each={cartItems} for:item="item">
+                        <p key={item.Id}>{item.Name} - {item.Price__c}</p>
+                    </template>
+                    <lightning-button label="Checkout" onclick={checkout}></lightning-button>
+                </template>
+                <template if:false={cartItems.length}>
+                    <p>Your cart is empty.</p>
+                </template>
+            </lightning-card>
+        </template>
+
+        <!-- Checkout -->
+        <template if:true={showCheckout}>
+            <lightning-card title="Checkout">
+                <p>Total Price: {totalPrice}</p>
+                <lightning-button label="Place Order" onclick={placeOrder}></lightning-button>
+            </lightning-card>
+        </template>
+    </lightning-card>
+</template>

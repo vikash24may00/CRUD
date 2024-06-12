@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-03-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+
+<template>
+    <lightning-card title="Opportunity Data Table">
+        <lightning-datatable
+            key-field="opportunityId"
+            data={opportunityData}
+            columns={columns}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+        <template if:true={error}>
+            <div class="slds-m-around_medium slds-text-align_center">
+                <p class="slds-text-color_error">{error}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

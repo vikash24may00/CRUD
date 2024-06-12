@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-03-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Account Search">
+        <!-- Input field for searching accounts -->
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                label="Search" 
+                onchange={handleInputChange}
+                placeholder="Type a letter to search for accounts">
+            </lightning-input>
+        </div>
+
+        <!-- Display list of accounts if available -->
+        <template if:true={accounts}>
+            <ul>
+                <template for:each={accounts} for:item="account">
+                    <li key={account.Id}>{account.Name}</li>
+                </template>
+            </ul>
+        </template>
+
+        <!-- Display error message if there is an error -->
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template>

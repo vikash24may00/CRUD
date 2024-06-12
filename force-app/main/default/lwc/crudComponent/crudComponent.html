@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Create Update Delete Accounts" icon-name="standard:account">
+        <template if:true={isLoading}>
+            <lightning-spinner size="medium" alternative-text="Loading..."></lightning-spinner>
+        </template>
+        <div class="slds-p-around_small lgc-bg slds-size_6-of-12">
+            <lightning-input type="text" name="accountName" label="Account Name" onchange={handleChange} required></lightning-input>
+            <!-- Error message for Account Name field -->
+            <div class="slds-form-element__help" if:true={isAccountNameInvalid}>Account Name is required</div>
+        </div>
+        <div class="slds-p-around_small lgc-bg slds-size_6-of-12">
+            <lightning-input type="email" name="email" label="Email" onchange={handleChange}></lightning-input>
+        </div>
+        <div class="slds-p-around_small lgc-bg slds-size_6-of-12">
+            <lightning-input type="tel" name="phone" label="Phone" onchange={handleChange}></lightning-input>
+        </div>
+        <div class="slds-p-around_small lgc-bg slds-m-left_large">
+            <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

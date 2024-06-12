@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-03-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Account Search">
+        <!-- Container for the search input field -->
+        <div class="slds-m-around_medium">
+            <!-- Input field for user to enter search key -->
+            <lightning-input 
+                label="Search" 
+                onchange={handleInputChange}
+                placeholder="Enter account name">
+            </lightning-input>
+        </div>
+
+        <!-- Display list of accounts if available -->
+        <template if:true={accounts.data}>
+            <ul>
+                <!-- Loop through the accounts and display each one -->
+                <template for:each={accounts.data} for:item="account">
+                    <li key={account.Id}>{account.Name}</li>
+                </template>
+            </ul>
+        </template>
+
+        <!-- Display error message if there is an error -->
+        <template if:true={accounts.error}>
+            <p>{accounts.error}</p>
+        </template>
+    </lightning-card>
+</template>
